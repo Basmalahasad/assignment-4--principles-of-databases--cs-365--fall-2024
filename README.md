@@ -14,7 +14,11 @@ For this assignment, you will write responses to nine questions based on differe
 
 ### 1. [2.4] What is the difference between a Cartesian Product, a Natural Join, and Theta-Joins?
 
-Replace this content with your answer
+Cartesian product is an algebraic operation that pairs every tuple from one relation every tuple in the second relation. The final relation contains every single tuple and attribute from both starting relations, but we resolve naming conflicts for similar attributes using dot notation (e.g., Relation1.AttributeName, Relation2.AttributeName). The resulting relation has a total number of tuples equal to (number of tuples in relation 1) × (number of tuples in relation 2). 
+
+Natural join pairs tuples from two relations based on matching values in common attributes, keeping only the tuples that have matching values in the common attributes and eliminating duplicate columns for shared the attributes. 
+
+Theta joins start with getting the cartesian product of the two relations, then applies a condition “theta” to filter the resulting combinations, the final relation only contains tuples that satisfy the condition requirements.
 
 ### 2. [2.5] What is a Referential Integrity Constraint?
 
