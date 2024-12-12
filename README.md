@@ -22,7 +22,8 @@ Theta joins start with getting the cartesian product of the two relations, then 
 
 ### 2. [2.5] What is a Referential Integrity Constraint?
 
-Replace this content with your answer
+Referential integrity constraint is expecting that a value in one relation's attribute must have a corresponding matching value in another relation's attribute. This can be applied across any attributes that are shared between two or more relations, but it is most commonly expected regarding foreign key creation, where every value that appears in a foreign key attribute must match a value in the referenced primary or unique key. Referential integrity constraints prevent “dangling tuples”, which are a pure violation of referential integrity, where a tuple in a foreign key does not match any values in the referenced relation. Overall, it ensures consistency of relations and validity of relationships. Referential integrity constraints are expressed algebraically as:
+π_attr1(relation1) ⊆ π_attr2(relation2)  
 
 ###  3. [2.5] What is a Key Constraint?
 
