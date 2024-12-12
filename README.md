@@ -14,16 +14,24 @@ For this assignment, you will write responses to nine questions based on differe
 
 ### 1. [2.4] What is the difference between a Cartesian Product, a Natural Join, and Theta-Joins?
 
-Cartesian product is an algebraic operation that pairs every tuple from one relation every tuple in the second relation. The final relation contains every single tuple and attribute from both starting relations, but we resolve naming conflicts for similar attributes using dot notation (e.g., Relation1.AttributeName, Relation2.AttributeName). The resulting relation has a total number of tuples equal to (number of tuples in relation 1) × (number of tuples in relation 2). 
+**Cartesian product** is an algebraic operation that pairs every tuple from one relation every tuple in the second relation. The final relation contains every single tuple and attribute from both starting relations, but we resolve naming conflicts for similar attributes using dot notation (e.g., Relation1.AttributeName, Relation2.AttributeName). The resulting relation has a total number of tuples equal to (number of tuples in relation 1) × (number of tuples in relation 2). 
 
-Natural join pairs tuples from two relations based on matching values in common attributes, keeping only the tuples that have matching values in the common attributes and eliminating duplicate columns for shared the attributes. 
+**Natural join** pairs tuples from two relations based on matching values in common attributes, keeping only the tuples that have matching values in the common attributes and eliminating duplicate columns for shared the attributes. 
 
-Theta joins start with getting the cartesian product of the two relations, then applies a condition “theta” to filter the resulting combinations, the final relation only contains tuples that satisfy the condition requirements.
+**Theta joins** start with getting the cartesian product of the two relations, then applies a condition “theta” to filter the resulting combinations, the final relation only contains tuples that satisfy the condition requirements.
 
 ### 2. [2.5] What is a Referential Integrity Constraint?
 
-Referential integrity constraint is expecting that a value in one relation's attribute must have a corresponding matching value in another relation's attribute. This can be applied across any attributes that are shared between two or more relations, but it is most commonly expected regarding foreign key creation, where every value that appears in a foreign key attribute must match a value in the referenced primary or unique key. Referential integrity constraints prevent “dangling tuples”, which are a pure violation of referential integrity, where a tuple in a foreign key does not match any values in the referenced relation. Overall, it ensures consistency of relations and validity of relationships. Referential integrity constraints are expressed algebraically as:
-π_attr1(relation1) ⊆ π_attr2(relation2)  
+Referential integrity constraint is expecting that a value in one relation's attribute must have a corresponding matching value in another relation's attribute. This can be applied across any attributes that are shared between two or more relations, but it is most commonly expected regarding foreign key creation, where every value that appears in a foreign key attribute must match a value in the referenced primary or unique key. Referential integrity constraints prevent “dangling tuples”, which are a pure violation of referential integrity, where a tuple in a foreign key does not match any values in the referenced relation. Overall, it ensures consistency of relations and validity of relationships. One way to apply referential integrity constraints to the database is to use the attribute-based CHECK constraints, for example:
+
+```sql
+foreign_key_attribute INT CHECK
+    (foreign_key_attribute IN (SELECT primary_key_attribute FROM referenced_table))
+```
+This will reject any entry into the foreign key that does not match a value in the primary key.
+
+Referential integrity constraints are expressed algebraically as:
+π_attr1(relation1) ⊆ π_attr2(relation2)
 
 ###  3. [2.5] What is a Key Constraint?
 
