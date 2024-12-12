@@ -22,7 +22,7 @@ For this assignment, you will write responses to nine questions based on differe
 
 ### 2. [2.5] What is a Referential Integrity Constraint?
 
-Referential integrity constraint is expecting that a value in one relation's attribute must have a corresponding matching value in another relation's attribute. This can be applied across any attributes that are shared between two or more relations, but it is most commonly expected regarding foreign key creation, where every value that appears in a foreign key attribute must match a value in the referenced primary or unique key. Referential integrity constraints prevent “dangling tuples”, which are a pure violation of referential integrity, where a tuple in a foreign key does not match any values in the referenced relation. Overall, it ensures consistency of relations and validity of relationships. One way to apply referential integrity constraints to the database is to use the attribute-based CHECK constraints, for example:
+Referential integrity constraint is expecting that a value in one relation's attribute must have a corresponding matching value in another relation's attribute. This can be applied across any attributes that are shared between two or more relations, but it is most commonly expected regarding foreign key creation, where every value that appears in a foreign key attribute must match a value in the referenced primary or unique key. Referential integrity constraints prevent “dangling tuples”, which are a pure violation of referential integrity, where a tuple in a foreign key does not match any values in the referenced relation. Overall, it ensures consistency of relations and validity of relationships. One way to apply referential integrity constraints to the database is to use the attribute-based `CHECK` constraints, for example:
 
 ```sql
 foreign_key_attribute INT CHECK
@@ -35,7 +35,7 @@ Referential integrity constraints are expressed algebraically as:
 
 ###  3. [2.5] What is a Key Constraint?
 
-Replace this content with your answer
+Key constraints are when duplicate values in a key attribute are permitted if and only if the entire tuple is identical across all attributes. In other words, it is the same exact tuple just repeated. This also implies the other way around, meaning that no two different tuples are allowed to have the same value for key attribute. Key constraints ensure the uniqueness of tuples within the attribute that is specified as the key attribute.
 
 ### 4. [4.1] What is an Entity/Relationship Model? What purpose does it serve in the process of creating/designing databases?
 
