@@ -39,7 +39,12 @@ Key constraints are when duplicate values in a key attribute are permitted if an
 
 ### 4. [4.1] What is an Entity/Relationship Model? What purpose does it serve in the process of creating/designing databases?
 
-Replace this content with your answer
+An entity/relationship is a graphical representation of the structure of the database using 3 elements:
+* **Entity sets**: Represent collections of similar entities (equivalent to database tables/relations). In an ER diagram they are drawn as *rectangular* nodes and described using nouns.
+* **Attributes**: Characteristics or properties of entity sets (equivalent to the attributes of the relation). In an ER diagram they are drawn as *oval* nodes and described using adjectives or descriptive phrases. Key attributes are also underlined.
+* **Relationships**: Connections between two or more entity sets. In an ER diagram they are drawn as *diamond* nodes and described using verbs.
+
+Apart from that ER diagrams are the first step in planning how the database is going to be structured or set up. They also express the cardinality of the relationships [one-to-one, many-to-one, or many-to-many]. And they help plan relationship constraints and referential integrity constraints.
 
 ### 5. [4.4] What is a Weak Entity Set?
 
