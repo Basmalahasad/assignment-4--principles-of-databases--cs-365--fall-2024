@@ -52,10 +52,22 @@ Weak entity sets are entity sets that cannot be defined uniquely solely by their
 
 Generally, a weak entity set does not make sense, or cannot exist meaningfully without its associated “strong” entity set. For example, a strong entity set could be `Student` and a weak entity set could be `StudentAddress`, where the student address table cannot exist independently of the student table.
 
-
 ### 6. [5.2.7; 6.3.8] Explain the concepts of Outerjoin, Natural Right Outer Joins, Natural Left Outer Joins, and Full Outer Joins.
 
-Replace this content with your answer
+An outer join preserves the dangling tuples that are removed during a natural join by padding them with null values in the attributes they do not possess. An outer join addresses the limitations of natural joins by preserving unmatched/dangling tuples. There are 3 types of outer joins:
+
+**Natural Right Outer Joins**: Performs a natural join on the relations, adds unmatched/dangling tuples from the right relation padding them with null values, therefore preserving all the information from the right argument/relation while discarding unmatched tuples from the left argument/relation.
+```sql 
+R NATURAL RIGHT JOIN S
+```
+**Natural Left Outer Joins**: Performs a natural join on the relations, adds unmatched/dangling tuples from the left relation padding them with null values, therefore preserving all the information from the left argument/relation while discarding unmatched tuples from the right argument/relation.
+```sql 
+R NATURAL LEFT JOIN S
+```
+**Natural Full Outer Joins**: Performs a natural join on the relations, adds unmatched/dangling tuples from both relations padding them with null values, therefore preserving all the information from both arguments/relations, with no data lost during the join. 
+```sql 
+R NATURAL FULL JOIN S
+```
 
 ### 7. [6.6.3] What is the difference between the SQL command `TRANSACTION` and the execution of any statement in SQL?
 
