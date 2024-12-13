@@ -71,7 +71,7 @@ R NATURAL FULL JOIN S
 
 ### 7. [6.6.3] What is the difference between the SQL command `TRANSACTION` and the execution of any statement in SQL?
 
-Replace this content with your answer
+SQL statements `INSERT, SELECT, UPDATE, DELETE` are executed immediately and modify the database instantly after they are executed. Each statement is isolated and executed independently of other statements. An SQL transaction groups more than one operation into a single indivisible unit. In this case, the statements are not immediately committed, keeping up with the all-or-nothing principle of atomicity. We use `START TRANSACTION` to signal to the database to group and start the SQL statements. Then we either use `COMMIT` to finalize and save all changes permanently when the transaction has executed successfully, or `ROLLBACK` to undo the changes and revert to the state before the transaction began if an error occurred. 
 
 ### 8. [8] What is a Virtual View and what are its advantages?
 
