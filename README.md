@@ -48,7 +48,10 @@ Apart from that ER diagrams are the first step in planning how the database is g
 
 ### 5. [4.4] What is a Weak Entity Set?
 
-Replace this content with your answer
+Weak entity sets are entity sets that cannot be defined uniquely solely by their own attributes, instead they depend on their relationship with other “stronger” entity sets. Weak entity sets do not have an independent key, uniqueness in the key is achieved by having one or more attributes from another entity sets. A weak entity set requires zero or more attributes of its own and key attributes from the “stronger” entity set that is related to it by a many-to-one relationship. In E/R diagrams, shapes have double boarders for the weak entity set and the supporting many-to-one relationship.
+
+Generally, a weak entity set does not make sense, or cannot exist meaningfully without its associated “strong” entity set. For example, a strong entity set could be `Student` and a weak entity set could be `StudentAddress`, where the student address table cannot exist independently of the student table.
+
 
 ### 6. [5.2.7; 6.3.8] Explain the concepts of Outerjoin, Natural Right Outer Joins, Natural Left Outer Joins, and Full Outer Joins.
 
