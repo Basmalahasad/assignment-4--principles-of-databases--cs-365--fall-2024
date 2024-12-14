@@ -79,6 +79,7 @@ Virtual views are relations that are defined or created by a query over other re
 ```sql
 CREATE VIEW (<view-name>) AS <query>;
 ```
+
 ### 9. [8.3] What is an *index* and what are its advantages?
 
 An index is a data structure used to improve the efficiency of data retrieval operations. Indexes have a key-value pair structure, where the key (index key) is a unique attribute values or combination of attribute values, and the value is the set of physical locations/ references to the tuples corresponding to index key. An index is placed on the attribute that we think is most used in searching as it makes it easier to find tuples. Indexes reduce the search time and accelerates the data retrieval operations, which improves the overall database responsiveness.
@@ -88,7 +89,22 @@ CREATE INDEX <index-name> ON <table-name>(<attribute(s)>)
 
 ### 10. Explain the concept of an MVC, or model, view, controller, framework for designing full stack applications
 
-Replace this content with your answer
+MVC is a design pattern that splits an application into 3 interconnected components. Although referred to as Model, View, Controller, it follows this flow:
+**VIEW → CONTROLLER → MODEL**
+
+1. **View layer**: This layer handles the content presentation of the application, displaying what the user sees or interacts with. Technologies like JavaScript, HTML, and CSS are commonly used to create this layer.
+2. **Controller layer**: Acts as the middle layer between the View and the Model, this layer translates user actions into updates to the Model and serves as the logic layer, retrieving information from the Model to show in the View. Common controller technologies include Perl, PHP, Python, and ASPX.
+2. **Model layer**: This is the data management layer, this layer is responsible for storing and managing data, including interactions with the database. Technologies like MySQL, MongoDB, and SQLite are used in this layer.
+
+The LAMP and MEAN stacks are popular combinations of MVC technologies.
+
+An example referencing our 3rd assignment:
+* The user interacts with the View (HTML).
+* The Controller (PHP) processes this request.
+* The Controller then queries the Model (MySQL).
+* The Model returns data to the Controller.
+* The Controller sends the data to the View.
+* The View renders the updates and reflects it in the interface.
 
 ---
 
