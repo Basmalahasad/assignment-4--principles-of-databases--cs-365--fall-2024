@@ -76,10 +76,15 @@ SQL statements `INSERT, SELECT, UPDATE, DELETE` are executed immediately and mod
 ### 8. [8] What is a Virtual View and what are its advantages?
 
 Virtual views are relations that are defined or created by a query over other relations. They are not stored but can be queried as if they exist. They also do not exist physically and go away after a session ends. The advantages of using virtual views are that it restricts direct access to the base relations, limiting the visibility to sensitive data and controlling the user’s permissions which prevent unauthorized access and modifications of the base relations. Views also simplify complex queries; they compact the information making it more organized and easier to navigate. The user also does not have to write the same query repeatedly when they can just create a view.
-
+```sql
+CREATE VIEW (<view-name>) AS <query>;
+```
 ### 9. [8.3] What is an *index* and what are its advantages?
 
-Replace this content with your answer
+An index is a data structure used to improve the efficiency of data retrieval operations. Indexes have a key-value pair structure, where the key (index key) is a unique attribute values or combination of attribute values, and the value is the set of physical locations/ references to the tuples corresponding to index key. An index is placed on the attribute that we think is most used in searching as it makes it easier to find tuples. Indexes reduce the search time and accelerates the data retrieval operations, which improves the overall database responsiveness.
+```sql
+CREATE INDEX <index-name> ON <table-name>(<attribute(s)>)
+```
 
 ### 10. Explain the concept of an MVC, or model, view, controller, framework for designing full stack applications
 
